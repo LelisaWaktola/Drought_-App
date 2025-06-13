@@ -41,7 +41,7 @@ window.addEventListener('load', function () {
     // Search functionality
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.getElementById('searchBtn');
-    const posts = document.querySelectorAll('.post');
+    const posts = document.querySelectorAll('.theme-card');
 
     function performSearch() {
         if (!searchInput) return;

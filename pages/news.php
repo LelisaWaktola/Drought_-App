@@ -78,7 +78,7 @@ if ($result) {
             <article class="news-card">
                 <?php if (!empty($post['image_path'])): ?>
                     <div class="news-image">
-                        <img src="<?php echo SITE_URL . '/assets/uploads/posts/' . $post['image_path']; ?>"
+                        <img src="<?="images/".$post['image_path']; ?>"
                              alt="<?php echo htmlspecialchars($post['title']); ?>" loading="lazy">
                     </div>
                 <?php endif; ?>

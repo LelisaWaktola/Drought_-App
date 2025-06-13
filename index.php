@@ -25,17 +25,22 @@
             <span class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </span>
-            <ul class="nav-links">
-                <li><a href="index.php" class="active"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="?page=researchers"><i class="fas fa-users"></i> Researchers</a></li>
-                <li><a href="?page=news"><i class="fas fa-newspaper"></i> News</a></li>
-                <li><a href="?page=events"><i class="fas fa-calendar"></i> Events</a></li>
-                <li><a href="?page=thematic"><i class="fas fa-chart-line"></i> Thematic Focus</a></li>
-                <li><a href="?page=stories"><i class="fas fa-book-open"></i> Stories</a></li>
-                <?php if(isset($_SESSION['is_admin'])): ?>
-                <li><a href="admin/dashboard.php"><i class="fas fa-user-shield"></i> Admin</a></li>
-                <?php endif; ?>
-            </ul>
+            <?php
+                   $currentPage = $_GET['page'] ?? 'home';
+            ?>
+
+          <ul class="nav-links">
+    <li><a href="index.php" class="<?= ($currentPage == 'home') ? 'active' : '' ?>"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="?page=researchers" class="<?= ($currentPage == 'researchers') ? 'active' : '' ?>"><i class="fas fa-users"></i> Researchers</a></li>
+    <li><a href="?page=news" class="<?= ($currentPage == 'news') ? 'active' : '' ?>"><i class="fas fa-newspaper"></i> News</a></li>
+    <li><a href="?page=events" class="<?= ($currentPage == 'events') ? 'active' : '' ?>"><i class="fas fa-calendar"></i> Events</a></li>
+    <li><a href="?page=thematic" class="<?= ($currentPage == 'thematic') ? 'active' : '' ?>"><i class="fas fa-chart-line"></i> Thematic Focus</a></li>
+    <li><a href="?page=stories" class="<?= ($currentPage == 'stories') ? 'active' : '' ?>"><i class="fas fa-book-open"></i> Stories</a></li>
+    <?php if(isset($_SESSION['is_admin'])): ?>
+    <li><a href="admin/dashboard.php"><i class="fas fa-user-shield"></i> Admin</a></li>
+    <?php endif; ?>
+</ul>
+
         </nav>
     </header>
 
@@ -70,7 +75,7 @@
             <div class="footer-section">
                 <h3>Connect With Us</h3>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-linkedin"></i></a>
                 </div>

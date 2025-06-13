@@ -33,7 +33,7 @@ if (!defined('SITE_URL')) {
         <?php foreach ($success_stories as $story): ?>
             <article class="story-card">
                 <div class="story-image">
-                     <img src="../images/download.jpg" alt="">
+                     <img src="<?= 'images/'.$story['image_path']?>" alt="">
                     <div class="story-category">
                         <span><?php echo htmlspecialchars($story['category']); ?></span>
                     </div>

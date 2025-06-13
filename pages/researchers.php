@@ -38,7 +38,7 @@ function get_avatar_url($avatar_filename) {
         <?php foreach ($researchers as $researcher): ?>
             <div class="researcher-card">
                 <div class="researcher-image">
-                    <img src="../images/download.jpg" alt="">
+                    <img src="<?='images/'.$researcher['avatar'] ?>" alt="">
                 </div>
                 <div class="researcher-info">
                     <h3><?php echo htmlspecialchars($researcher['first_name'] . ' ' . $researcher['last_name']); ?></h3>
